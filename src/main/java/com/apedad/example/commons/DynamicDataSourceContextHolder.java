@@ -10,13 +10,13 @@ import org.apache.log4j.Logger;
 public class DynamicDataSourceContextHolder {
     private static final Logger LOG = Logger.getLogger(DynamicDataSourceContextHolder.class);
 
-    private static final ThreadLocal<DataSourceKey> currentDatesource = new ThreadLocal<>();
+    private static final ThreadLocal<DataSourceKey> currentDatasource = new ThreadLocal<>();
 
     /**
      * 清除当前数据源
      */
     public static void clear() {
-        currentDatesource.remove();
+        currentDatasource.remove();
     }
 
     /**
@@ -25,7 +25,7 @@ public class DynamicDataSourceContextHolder {
      * @return 当前使用数据源的ID
      */
     public static DataSourceKey get() {
-        return currentDatesource.get();
+        return currentDatasource.get();
     }
 
     /**
@@ -34,7 +34,7 @@ public class DynamicDataSourceContextHolder {
      * @param value 需要设置的数据源ID
      */
     public static void set(DataSourceKey value) {
-        currentDatesource.set(value);
+        currentDatasource.set(value);
     }
 
     /**
